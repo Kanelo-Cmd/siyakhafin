@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 174 30% 97%;
+    --foreground: 195 45% 12%;
+    --ink: 195 45% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 195 45% 12%;
+
+    --primary: 173 80% 28%;
+    --primary-foreground: 0 0% 100%;
+    --primary-soft: 173 55% 92%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 30 45% 16%;
+
+    --muted: 190 24% 94%;
+    --muted-foreground: 195 16% 42%;
+
+    --border: 190 22% 88%;
+    --input: 190 22% 88%;
+    --ring: 173 80% 28%;
+
+    --success: 152 58% 40%;
+    --warning: 38 92% 48%;
+    --danger: 0 72% 51%;
+
+    --radius: 1rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-image:
+      radial-gradient(circle at 12% 0%, hsl(173 80% 28% / 0.06), transparent 40%),
+      radial-gradient(circle at 90% 10%, hsl(38 92% 50% / 0.06), transparent 35%);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: hsl(0 0% 100% / 0.72);
+    backdrop-filter: blur(14px);
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+}
